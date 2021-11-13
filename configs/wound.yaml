@@ -13,7 +13,7 @@ DATASET:
 TRAIN:
   IMAGE_SIZE    : [256,256]      # training image size in (h, w)
   BATCH_SIZE    : 8               # batch size used to train
-  EPOCHS        : 500             # number of epochs to train
+  EPOCHS        : 5             # number of epochs to train
   EVAL_INTERVAL : 1              # evaluation interval during training
   AMP           : false           # use AMP in training
   DDP           : false           # use DDP training

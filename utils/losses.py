@@ -31,17 +31,12 @@ class OhemCrossEntropy(nn.Module):
 
     def _forward(self, preds: Tensor, labels: Tensor) -> Tensor:
         # preds in shape [B, C, H, W] and labels in shape [B, H, W]
-        print('here1')
         if preds.shape[-2:] != labels.shape[-2:]:
             preds = F.interpolate(preds, size=labels.shape[1:], mode='bilinear', align_corners=False)
-        print('here2')
         n_min = labels[labels != self.ignore_label].numel() // 16
-        print('here3')
         print(preds.shape, labels.shape)
         loss = self.criterion(preds, labels).view(-1)
-        print('here4')
         loss_hard = loss[loss > self.thresh]
-        print('here5')
         if loss_hard.numel() < n_min:
             loss_hard, _ = loss.topk(n_min)
 
