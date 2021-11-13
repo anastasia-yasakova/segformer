@@ -1,0 +1,6 @@
+tqdm
+tabulate
+numpy
+scipy 
+matplotlib
+tensorboard
