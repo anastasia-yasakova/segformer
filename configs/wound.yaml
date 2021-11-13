@@ -3,8 +3,8 @@ SAVE_DIR        : 'output'         # output folder name used for saving the mode
 
 MODEL:                                    
   NAME          : SegFormer                                           # name of the model you are using
-  VARIANT       : B3                                                  # model variant
-  PRETRAINED    : '/content/drive/MyDrive/Colab Notebooks/unet/data/ADEChallenge/backbones/mit_b3.pth'              # backbone model's weight 
+  VARIANT       : B1                                                  # model variant
+  PRETRAINED    : '/content/drive/MyDrive/pretrained/mit_b1.pth'              # backbone model's weight 
 
 DATASET:
   NAME          : ade20k                                              # dataset name to be trained with (camvid, cityscapes, ade20k)
@@ -36,7 +36,7 @@ SCHEDULER:
   
 
 EVAL:
-  MODEL_PATH    : 'output/SegFormer_B3_ade20k_final.pth'  # trained model file path
+  MODEL_PATH    : 'output/SegFormer_B1_ade20k_final.pth'  # trained model file path
   IMAGE_SIZE    : [256,256]                                                            # evaluation image size in (h, w)                       
   MSF: 
     ENABLE      : false                                                                 # multi-scale and flip evaluation  
