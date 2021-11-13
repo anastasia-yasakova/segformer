@@ -13,8 +13,8 @@ class Compose:
     def __call__(self, img: Tensor, mask: Tensor) -> Tuple[Tensor, Tensor]:
         if mask.ndim == 2:
             assert img.shape[1:] == mask.shape
-        else:
-            assert img.shape[1:] == mask.shape[1:]
+        # else:
+        #     assert img.shape[1:] == mask.shape[1:]
 
         for transform in self.transforms:
             img, mask = transform(img, mask)
