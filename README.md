@@ -1,19 +1,26 @@
 # <div align="center">Semantic Segmentation</div>
 </div>
 
-1. Build Docker Image
+1. Clone the repository
 
 ```bash
-$ docker build -t segmgentation -f Dockerfile .
+$ git clone https://github.com/anastasia-yasakova/segformer
+$ cd segformer
 ```
 
-2. Run the inference model
+2. Build Docker Image
+
+```bash
+$ docker build -t segmentation -f Dockerfile .
+```
+
+3. Run the inference model
 
 ```bash
 $ python tools/infer.py --cfg configs/custom.yaml
 ```
 
-3. Run the script to check the received masks
+4. Run the script to check the received masks
 
 ```bash
 $ python test_segformer.py
